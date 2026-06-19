@@ -1,0 +1,99 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(8, 12, 28, 0.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.navbar__brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  user-select: none;
+}
+
+.navbar__plane {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 6px #00c896);
+}
+
+.navbar__dot { color: #00c896; }
+
+/* avatar button */
+.navbar__right { position: relative; }
+
+.navbar__avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00c896, #2a7fff);
+  border: none;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.navbar__avatar:hover { transform: scale(1.1); }
+
+/* dropdown */
+.navbar__dropdown {
+  position: absolute;
+  top: 46px; right: 0;
+  background: #0f1729;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 0.6rem;
+  min-width: 200px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+.dd-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.3rem 0.6rem;
+  color: #fff;
+}
+.dd-email {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  padding: 0 0.6rem 0.5rem;
+}
+.dd-sep {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin: 0.3rem 0;
+}
+.navbar__dropdown button {
+  display: block;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.83rem;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.navbar__dropdown button:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+.dd-logout { color: #e8533a !important; }
+.dd-logout:hover { background: rgba(232,83,58,0.1) !important; }

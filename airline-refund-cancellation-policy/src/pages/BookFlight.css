@@ -1,0 +1,380 @@
+.bf-page {
+  min-height: 100vh;
+  padding-top: 64px;
+  position: relative;
+}
+
+.bf-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+.bf-hero { margin-bottom: 2rem; }
+.bf-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.4rem;
+}
+.bf-sub { font-size: 0.9rem; color: var(--dim); }
+
+/* ─── Search card ────────────────────────────────────────────────────────── */
+.bf-search-card {
+  background: var(--navy2);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.bf-search-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1.4rem;
+}
+.bf-search-icon { font-size: 1.1rem; }
+
+.bf-form { display: flex; flex-direction: column; gap: 1rem; }
+
+.bf-form-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.bf-swap {
+  font-size: 1.1rem;
+  color: var(--teal);
+  padding-bottom: 0.6rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.bf-field label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--dim);
+  font-weight: 500;
+}
+.bf-field select,
+.bf-field input[type="date"] {
+  background: var(--navy3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  color: var(--text);
+  font-size: 0.93rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.bf-field select:focus,
+.bf-field input[type="date"]:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,200,150,0.1);
+}
+.bf-field select option { background: var(--navy3); }
+.bf-field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+}
+
+/* info strip */
+.bf-info-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.bf-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 0.83rem;
+  color: var(--dim);
+  line-height: 1.45;
+}
+.bf-info-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+.bf-info-item strong { color: var(--teal); }
+
+/* ─── Results ────────────────────────────────────────────────────────────── */
+.bf-results-header { margin-bottom: 1.5rem; }
+.bf-results-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+.bf-results-sub { font-size: 0.83rem; color: var(--dim); }
+
+.bf-flight-list { display: flex; flex-direction: column; gap: 1rem; }
+
+.bf-flight-card {
+  background: var(--navy2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.bf-flight-card:hover {
+  border-color: rgba(0,200,150,0.25);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.bf-fc-left { flex: 1; }
+
+.bf-fc-airline {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.9rem;
+  color: var(--dim);
+}
+.bf-fc-airline strong { color: var(--text); }
+.bf-fc-no {
+  font-size: 0.72rem;
+  background: rgba(255,255,255,0.07);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  color: var(--dim);
+}
+
+.bf-fc-times {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.bf-fc-time {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.bf-fc-dur-line {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.bf-fc-dur { font-size: 0.68rem; color: var(--dim); }
+.bf-fc-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bf-fc-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.bf-fc-route {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: var(--dim);
+}
+
+.bf-fc-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+.bf-fc-fare {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--teal);
+}
+.bf-fc-class { font-size: 0.72rem; color: var(--dim); }
+.bf-fc-seats { font-size: 0.72rem; color: var(--warn); }
+
+.bf-select-btn {
+  padding: 0.5rem 1.1rem;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.83rem;
+  transition: opacity 0.15s, transform 0.15s;
+  margin-top: 0.3rem;
+}
+.bf-select-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ─── Confirm card ───────────────────────────────────────────────────────── */
+.bf-confirm-card {
+  background: var(--navy2);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bf-confirm-header { text-align: center; }
+.bf-confirm-icon  { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.bf-confirm-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+.bf-confirm-header p { font-size: 0.83rem; color: var(--dim); }
+
+.bf-confirm-ticket {
+  background: var(--navy3);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+.bf-ct-airline {
+  font-size: 0.82rem;
+  color: var(--dim);
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.bf-ct-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+.bf-ct-endpoint {}
+.bf-ct-code {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.bf-ct-city  { font-size: 0.72rem; color: var(--dim); }
+.bf-ct-time  { font-size: 0.9rem; font-weight: 500; margin-top: 0.2rem; }
+.bf-ct-mid   { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; flex: 1; }
+.bf-ct-dur   { font-size: 0.7rem; color: var(--dim); }
+.bf-ct-line  { font-size: 1rem; }
+
+.bf-ct-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+.bf-ct-item  { display: flex; flex-direction: column; gap: 0.1rem; }
+.bf-ct-lbl   { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--dim); }
+.bf-ct-fare  { color: var(--teal); font-weight: 700; }
+
+.bf-confirm-note {
+  background: rgba(0,200,150,0.07);
+  border: 1px solid rgba(0,200,150,0.18);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.72);
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+.bf-confirm-note strong { color: var(--teal); }
+
+/* ─── Done / success ─────────────────────────────────────────────────────── */
+.bf-done-card {
+  background: var(--navy2);
+  border: 1px solid rgba(0,200,150,0.25);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 40px rgba(0,200,150,0.07);
+}
+.bf-done-icon  { font-size: 3rem; }
+.bf-done-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.bf-done-sub   { font-size: 0.88rem; color: var(--dim); }
+.bf-done-ref   { font-size: 0.82rem; color: var(--dim); background: var(--navy3); padding: 0.4rem 1rem; border-radius: 8px; }
+.bf-done-ref strong { color: var(--teal); }
+
+.bf-done-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; width: 100%; }
+
+.bf-done-primary {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.93rem;
+  transition: opacity 0.15s;
+}
+.bf-done-primary:hover { opacity: 0.88; }
+
+.bf-done-secondary {
+  padding: 0.8rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  color: var(--dim);
+  font-size: 0.88rem;
+  transition: all 0.15s;
+}
+.bf-done-secondary:hover { color: #fff; border-color: rgba(255,255,255,0.25); }
+
+.bf-done-note {
+  font-size: 0.78rem;
+  color: var(--dim);
+  max-width: 380px;
+  line-height: 1.5;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .bf-form-row { grid-template-columns: 1fr; }
+  .bf-swap     { display: none; }
+  .bf-flight-card { flex-direction: column; align-items: flex-start; }
+  .bf-fc-right { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 0.5rem 1rem; }
+}

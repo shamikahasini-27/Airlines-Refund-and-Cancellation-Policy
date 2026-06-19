@@ -1,0 +1,278 @@
+.home-page {
+  min-height: 100vh;
+  padding-top: 64px;
+  position: relative;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+.home-hero { margin-bottom: 2.5rem; }
+
+.hero-greet {
+  font-size: 0.88rem;
+  color: var(--dim);
+  margin-bottom: 0.45rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.65rem;
+}
+
+.hero-accent {
+  background: linear-gradient(90deg, var(--teal), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 0.95rem;
+  color: var(--dim);
+  max-width: 430px;
+  line-height: 1.55;
+}
+
+/* ─── Stats strip ────────────────────────────────────────────────────────── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--navy2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+}
+
+.stat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 0.2rem;
+}
+
+.stat-lbl {
+  font-size: 0.72rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Section title ──────────────────────────────────────────────────────── */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+/* ─── No bookings ────────────────────────────────────────────────────────── */
+.no-bookings {
+  background: var(--navy2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--dim);
+}
+.no-bookings p + p { font-size: 0.8rem; margin-top: 0.4rem; }
+.no-bookings strong { color: var(--teal); }
+
+/* ─── Booking card grid ──────────────────────────────────────────────────── */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.2rem;
+}
+
+.bcard {
+  background: var(--navy2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+}
+.bcard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 200, 150, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.bcard-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.1rem;
+}
+
+.bcard-airline { font-size: 0.82rem; color: var(--dim); }
+
+/* badges */
+.badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge-g { background: rgba(0,200,150,0.14); color: var(--teal); }
+.badge-y { background: rgba(245,200,66,0.14); color: var(--warn); }
+.badge-r { background: rgba(232,83,58,0.14);  color: var(--danger); }
+
+/* route */
+.route-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+.route-code {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.route-arrow { font-size: 0.65rem; color: var(--dim); letter-spacing: 2px; }
+.route-cities {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--dim);
+  margin-bottom: 1.1rem;
+}
+
+/* info rows */
+.bcard-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+  margin-bottom: 1.1rem;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+.info-lbl { color: var(--dim); }
+.fare-val  { font-weight: 600; color: var(--teal); }
+
+/* CTA strip */
+.bcard-cta {
+  background: rgba(0, 200, 150, 0.08);
+  border: 1px solid rgba(0, 200, 150, 0.2);
+  color: var(--teal);
+  text-align: center;
+  padding: 0.55rem;
+  border-radius: 10px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.bcard:hover .bcard-cta { background: rgba(0, 200, 150, 0.16); }
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 420px) {
+  .stats-row { grid-template-columns: 1fr; }
+}
+
+/* ─── Book flight button ─────────────────────────────────────────────────── */
+.book-flight-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.93rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.book-flight-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.bookings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.bookings-header .section-title { margin-bottom: 0; }
+
+.book-mini-btn {
+  padding: 0.38rem 0.9rem;
+  background: rgba(0,200,150,0.1);
+  border: 1px solid rgba(0,200,150,0.28);
+  border-radius: 8px;
+  color: var(--teal);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.book-mini-btn:hover { background: rgba(0,200,150,0.2); }
+
+/* ─── Empty state ────────────────────────────────────────────────────────── */
+.no-bookings {
+  background: var(--navy2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.no-bookings__icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.no-bookings__main { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.no-bookings__sub  { font-size: 0.85rem; color: var(--dim); max-width: 340px; line-height: 1.5; }
+
+/* ─── Add more card ──────────────────────────────────────────────────────── */
+.bcard--add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-style: dashed;
+  border-color: rgba(0,200,150,0.2);
+  min-height: 200px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.bcard--add:hover {
+  border-color: rgba(0,200,150,0.5);
+  background: rgba(0,200,150,0.04);
+  transform: none;
+  box-shadow: none;
+}
+.bcard-add-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(0,200,150,0.12);
+  color: var(--teal);
+  font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.bcard-add-text { font-size: 0.85rem; color: var(--teal); font-weight: 500; }

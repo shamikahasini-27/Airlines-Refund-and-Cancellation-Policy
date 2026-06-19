@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─── CSS Variables ──────────────────────────────────────────────────────── */
+:root {
+  --navy:   #080c1c;
+  --navy2:  #0f1729;
+  --navy3:  #1a2540;
+  --navy4:  #212d4a;
+  --teal:   #00c896;
+  --blue:   #2a7fff;
+  --gold:   #f5b942;
+  --danger: #e8533a;
+  --warn:   #f5c842;
+  --text:   #ffffff;
+  --dim:    rgba(255, 255, 255, 0.5);
+  --dim2:   rgba(255, 255, 255, 0.22);
+  --border: rgba(255, 255, 255, 0.07);
+  --border2:rgba(255, 255, 255, 0.13);
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .brand { font-family: 'Syne', sans-serif; }
+
+a { color: var(--teal); text-decoration: none; }
+
+button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+input { font-family: 'DM Sans', sans-serif; }
+
+/* ─── Page transition ────────────────────────────────────────────────────── */
+.page-enter {
+  animation: pageIn 0.35s ease both;
+}
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ─── Shared spinner ─────────────────────────────────────────────────────── */
+.spin {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── Background decoration (reused across pages) ───────────────────────── */
+.bg-decor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+.bg-orb-1 {
+  width: 600px; height: 600px;
+  background: rgba(0, 200, 150, 0.08);
+  top: -150px; right: -100px;
+}
+.bg-orb-2 {
+  width: 500px; height: 500px;
+  background: rgba(42, 127, 255, 0.07);
+  bottom: -100px; left: -80px;
+}
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
